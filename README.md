@@ -80,3 +80,4 @@ Inside scheduleInterview,
 4. Create an asynchronous method checkAlerts to loop through watchlist and returns alerts when currentPrice>=threshold
 or  "No alerts triggered"
 ### Output
+-Status of stock

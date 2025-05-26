@@ -48,19 +48,18 @@ create a promise function and pass it the value of taskTitle then if it contains
 ## Question 3
 ### Input
 ### Process
-1. Create class Candidate with constructor and properties  name, position, and originalInterviews with empty array
+1. Create class Candidate with constructor and properties  name, position, and interviews as an array
 2. Create a method scheduleInterview that takes in date.
 Inside scheduleInterview, 
-3. create newInterview object with date and status = "pending".
+3. Create newInterview object with date and status = "pending".
 4. Push newInterview into this.interviews array.
 5. Create async method sendConfirmation().
-6. return a Promise that waits 1 second using setTimeout.
-7. resolve Promise with message Interview confirmed with the name after 1 second.When Promise resolves, 
-8. console log the message .
-9. Create array originalInterviews with two interview objects with dates and status.
-10. Create new Candidate instance with name and position.
-11. Call scheduleInterview("2025-06-09") on candidate instance.
-12. Call sendConfirmation() on candidate instance.
+6. Return a Promise that waits 1 second using setTimeout.
+7. Resolve Promise with message Interview confirmed with the name after 1 second as the promise resolves.
+8. Console log the message.
+9. Create new Candidate instance with name and position.
+10. Call scheduleInterview("2025-06-09") on candidate instance.
+11. Call sendConfirmation() on candidate instance.
 
 ### Output
 - A message inviting the candidate

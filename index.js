@@ -73,7 +73,39 @@ promise.then(()=>{
 })
 
 // Question 3
-
+class Candidate {
+    constructor(name, position, originalInterviews = []) {
+      this.name = name;
+      this.position = position;
+      this.interviews = originalInterviews;
+    }
+    scheduleInterview(date) {
+      let newInterview = {
+        date: date,
+        status: "pending"
+      };
+      this.interviews.push(newInterview);
+    }
+    async sendConfirmation() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          let message = `Interview confirmed with ${this.name}`;
+          resolve(message);
+        }, 1000);
+      }).then((msg) => {
+        console.log(msg);
+        return msg;
+      });
+    }
+  }
+  let originalInterviews = [
+    { date: "2025-05-28", status: "completed" },
+    { date: "2025-05-30", status: "pending" }
+  ];
+  let candidate = new Candidate("Akeza Saloi", "Data analyst");
+  candidate.scheduleInterview("2026-01-01");
+  candidate.sendConfirmation();
+  console.log(candidate.interviews);
 //question 4
 class Course {
     constructor(title, instructor) {
@@ -117,18 +149,18 @@ class StockTracker {
         this.watchlist = [];
     }
     updatePrice(symbol, newPrice) {
-        for (let stock of this.watchlist) {
-            if (stock.symbol === symbol) {
-                stock.currentPrice = newPrice;
+        for (let item of this.watchlist) {
+            if (item.symbol === symbol) {
+                item.currentPrice = newPrice;
             }
         }
     }
     checkAlerts() {
         return new Promise((resolve, reject) => {
             const alerts = [];
-            for (let stock of this.watchlist) {
-                if (stock.currentPrice >= stock.threshold) {
-                    alerts.push(stock);
+            for (let item of this.watchlist) {
+                if (item.currentPrice >= item.threshold) {
+                    alerts.push(item);
                 }
             }
             if (alerts.length > 0) {
@@ -139,12 +171,12 @@ class StockTracker {
         });
     }
 }
-const track = new StockTracker();
-track.watchlist.push({ symbol: 'AS1', threshold: 4568, currentPrice: 6800 });
-track.watchlist.push({ symbol: 'AS2', threshold: 3829, currentPrice: 10000 });
-track.updatePrice('AS1', 7898);
-track.updatePrice('AS2', 5798);
-track.checkAlerts()
+const track1 = new StockTracker();
+track1.watchlist.push({ symbol: 'AS1', threshold: 4568, currentPrice: 6800 });
+track1.watchlist.push({ symbol: 'AS2', threshold: 3829, currentPrice: 10000 });
+track1.updatePrice('AS1', 7898);
+track1.updatePrice('AS2', 5798);
+track1.checkAlerts()
   .then(alerts => {
     console.log('Alerts triggered:', alerts);
   })
@@ -154,7 +186,7 @@ track.checkAlerts()
  const tracker = new StockTracker();
  tracker.watchlist.push({ symbol: 'AS3', threshold: 6483, currentPrice: 4500 });
 tracker.watchlist.push({ symbol: 'AS4', threshold: 2630, currentPrice: 3800 });
-tracker.updatePrice('AS3', 151);
+tracker.updatePrice('AS3', 4545);
 tracker.updatePrice('AS4', 2705);
 tracker.checkAlerts()
   .then(alerts => {

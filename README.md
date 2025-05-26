@@ -61,9 +61,9 @@ Inside scheduleInterview,
 10. Create new Candidate instance with name and position.
 11. Call scheduleInterview("2025-06-09") on candidate instance.
 12. Call sendConfirmation() on candidate instance.
-13. Console Log candidate.interviews.
+
 ### Output
-- an array of candidates in the interviews  
+- A message inviting the candidate
 ## Question 4
 ### Input
 ### Process

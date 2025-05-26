@@ -1,4 +1,3 @@
-
 // Question 1
 class CustomerOrder {
     constructor(orderId, items, status) {
@@ -74,10 +73,10 @@ promise.then(()=>{
 
 // Question 3
 class Candidate {
-    constructor(name, position, originalInterviews = []) {
+    constructor(name, position, interviews = []) {
       this.name = name;
       this.position = position;
-      this.interviews = originalInterviews;
+      this.interviews = interviews;
     }
     scheduleInterview(date) {
       let newInterview = {
@@ -89,23 +88,18 @@ class Candidate {
     async sendConfirmation() {
       return new Promise((resolve) => {
         setTimeout(() => {
-          let message = `Interview confirmed with ${this.name}`;
-          resolve(message);
+          let invite = `Interview confirmed with ${this.name}`;
+          resolve(invite);
         }, 1000);
-      }).then((msg) => {
-        console.log(msg);
-        return msg;
+      }).then((invite) => {
+        console.log(invite);
+        return invite;
       });
     }
   }
-  let originalInterviews = [
-    { date: "2025-05-28", status: "completed" },
-    { date: "2025-05-30", status: "pending" }
-  ];
   let candidate = new Candidate("Akeza Saloi", "Data analyst");
   candidate.scheduleInterview("2026-01-01");
   candidate.sendConfirmation();
-  console.log(candidate.interviews);
 //question 4
 class Course {
     constructor(title, instructor) {

@@ -125,15 +125,15 @@ class Course {
         });
     }
 }
-const course = new Course("JavaScript", "Bright");
-course.students.push({ name: "Queen", progress: 90 });
-course.students.push({ name: "Saloi", progress: 80 });
-course.updateProgress("Queen", 100);
-course.generateCertificate("Queen")
-  .then(msg => console.log(msg))
-  .catch(err => console.log(err));
+const course = new Course("JavaScript", "Hunter");
+course.students.push({ name: "Saloi", progress: 90 });
+course.students.push({ name: "Akeza", progress: 80 });
+course.updateProgress("Saloi", 100);
 course.generateCertificate("Saloi")
-  .then(msg => console.log(msg))
+  .then(message => console.log(message))
+  .catch(err => console.log(err));
+course.generateCertificate("Akeza")
+  .then(message => console.log(message))
   .catch(err => console.log(err));
 
 //Question 5

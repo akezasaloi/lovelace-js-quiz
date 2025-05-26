@@ -140,10 +140,10 @@ class StockTracker {
     }
 }
 const track = new StockTracker();
-track.watchlist.push({ symbol: 'AAA', threshold: 150, currentPrice: 170 });
-track.watchlist.push({ symbol: 'BBB', threshold: 2700, currentPrice: 3500 });
-track.updatePrice('AAA', 141);
-track.updatePrice('BBB', 205);
+track.watchlist.push({ symbol: 'AS1', threshold: 4568, currentPrice: 6800 });
+track.watchlist.push({ symbol: 'AS2', threshold: 3829, currentPrice: 10000 });
+track.updatePrice('AS1', 7898);
+track.updatePrice('AS2', 5798);
 track.checkAlerts()
   .then(alerts => {
     console.log('Alerts triggered:', alerts);
@@ -152,10 +152,10 @@ track.checkAlerts()
     console.log(err);
   });
  const tracker = new StockTracker();
- tracker.watchlist.push({ symbol: 'CCC', threshold: 140, currentPrice: 145 });
-tracker.watchlist.push({ symbol: 'DDD', threshold: 2340, currentPrice: 2680 });
-tracker.updatePrice('CCC', 151);
-tracker.updatePrice('DDD', 2705);
+ tracker.watchlist.push({ symbol: 'AS3', threshold: 6483, currentPrice: 4500 });
+tracker.watchlist.push({ symbol: 'AS4', threshold: 2630, currentPrice: 3800 });
+tracker.updatePrice('AS3', 151);
+tracker.updatePrice('AS4', 2705);
 tracker.checkAlerts()
   .then(alerts => {
     console.log('Alerts triggered for:');

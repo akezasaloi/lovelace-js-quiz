@@ -2,8 +2,29 @@
 Quiz in javascript
 ## Question 1
 ### Input
+- orderId as a string
+- items as an array of objects
 ### Process
+1. Create a class called CustomerOrder
+Add a constructor with atributes of
+orderId:string
+items: array of objects with 
+- name:string
+- quantity:number 
+- price:number
+- status:string
+2. Create method calculateTotal()
+Initialize a variable totalAmount  with 0
+Iterate through each item in the items array
+For each item, multiply quantity by price
+Add the result to the total
+Return the total amount
+processPayment() and async method
+ Returns a promise that waits for 2 seconds and after two seconds resolves successfully and after the Promise resolves
+the status property change to paid and a success message is printed including orderId and the new status of the order
 ### Output
+- The total amount charged
+- A success message
 ## Question 2
 ### Input
 - Name as a string
@@ -24,3 +45,24 @@ create a promise function and pass it the value of taskTitle then if it contains
 ### Output
 - Task status as a string
 - Progress status as a string 
+## Question 3
+### Input
+### Process
+### Output
+## Question 4
+### Input
+### Process
+1. Create a class with function constructor taking in,title, instructor and array of students
+2. Add a function updateProgress that takes in studentName and value that updates student's progress
+3. Create an async method taking in student Name that returns a promise resolving only when student's progress is 100 otherwise incomplete progress
+### Output
+## Question 5
+### Input
+
+### Process
+1. Create a class StockTracker
+2. Create a function constructor watchlist which is an array of symbol,threshold and current Price.
+3. Create a function that takes in symbol,newPrice to update the stock's current price.
+4. Create an asynchronous method checkAlerts to loop through watchlist and returns alerts when currentPrice>=threshold
+or  "No alerts triggered"
+### Output
